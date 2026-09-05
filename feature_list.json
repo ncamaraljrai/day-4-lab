@@ -1,0 +1,41 @@
+{
+  "wip_limit": 1,
+  "vcr_gate": "block activation while VCR < 1.0",
+  "features": [
+    {
+      "id": "F01",
+      "behavior": "POST /notes with {text} returns 201 and a deterministic note id",
+      "verification": "python -m pytest -q tests/test_features.py::test_f01_create_note",
+      "state": "passing",
+      "evidence": "controlled treatment verification passed; implementation commit 1ca9948"
+    },
+    {
+      "id": "F02",
+      "behavior": "GET /notes/{id} returns the previously created note",
+      "verification": "python -m pytest -q tests/test_features.py::test_f02_read_note",
+      "state": "passing",
+      "evidence": "controlled treatment verification passed; implementation commit 9798304"
+    },
+    {
+      "id": "F03",
+      "behavior": "GET /notes returns notes in insertion order",
+      "verification": "python -m pytest -q tests/test_features.py::test_f03_list_notes",
+      "state": "passing",
+      "evidence": "controlled treatment verification passed; implementation commit 659bf72"
+    },
+    {
+      "id": "F04",
+      "behavior": "PATCH /notes/{id} with {text} updates and returns the note",
+      "verification": "python -m pytest -q tests/test_features.py::test_f04_update_note",
+      "state": "passing",
+      "evidence": "controlled treatment verification passed; implementation commit 6aee88a"
+    },
+    {
+      "id": "F05",
+      "behavior": "DELETE /notes/{id} returns 204 and subsequent read returns 404",
+      "verification": "python -m pytest -q tests/test_features.py::test_f05_delete_note",
+      "state": "passing",
+      "evidence": "controlled treatment verification passed; implementation commit 37b8697"
+    }
+  ]
+}
