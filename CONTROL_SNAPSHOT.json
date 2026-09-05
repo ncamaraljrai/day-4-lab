@@ -1,0 +1,14 @@
+{
+  "features": [
+    {"id":"F01","state":"passing","verification":"python -m pytest -q tests/test_features.py::test_f01_create_note"},
+    {"id":"F02","state":"passing","verification":"python -m pytest -q tests/test_features.py::test_f02_read_note"},
+    {"id":"F03","state":"active","verification":"python -m pytest -q tests/test_features.py::test_f03_list_notes"},
+    {"id":"F04","state":"active","verification":"python -m pytest -q tests/test_features.py::test_f04_update_note"},
+    {"id":"F05","state":"active","verification":"python -m pytest -q tests/test_features.py::test_f05_delete_note"}
+  ],
+  "activated": 5,
+  "verified": 2,
+  "vcr": 0.40,
+  "changed_lines": 92,
+  "files_touched": 8
+}
